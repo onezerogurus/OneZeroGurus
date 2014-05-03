@@ -1,0 +1,113 @@
+<div id="main-header">
+    <div id="logo-name">
+		Logo
+    </div>
+    <div id="navigation-container">
+        <nav id="navigation">
+            <a class="nav-item" href="#whatWeDo">What We Do</a>
+            <a class="nav-item" href="#WhatWeDone">What We've Done</a>
+            <a class="nav-item" href="#whoWeAre">Who We Are</a>
+            <a class="nav-item" href="#contact">Contact Us</a>
+
+        </nav>
+    </div>
+
+</div>
+
+<div id="main-body">
+	<div id="top-slideShow">
+		<div ng-init="init()" >
+		    <div style="margin-left:15%;">
+		        <div >
+		            <img style="width:300px;height:300px;"class="slideshowImg  imgStyle" ng-if="counter === 0" ng-src="{{urlImgArray[0]}}" />
+		        </div>
+		        <div >
+		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 1" ng-src="{{urlImgArray[1]}}" />
+		        </div>
+		        <div >
+		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 2" ng-src="{{urlImgArray[2]}}" />
+		        </div>
+				<div >
+		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 3"ng-src="{{urlImgArray[3]}}" />
+		        </div>
+		        <div >
+		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 4" ng-src="{{urlImgArray[0]}}" />
+		        </div>
+		    </div>
+
+		</div>
+	</div>
+
+	<!--this one for the  Image WebSite-->
+	<div id="WebContainer">
+		<h3 id="webTitle">What We Have Done</h3>
+		<div id="webImageContainer">
+			<ul id="webImageUL">
+				<li data-ng-model="imageUrl" data-ng-repeat="imageUrl in webImageUrlArray track by $index">
+					<div ng-click="selectedImage(imageUrl)">
+						<a href=""><img style="webImageStyle" ng-src="{{imageUrl}}"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div>
+		<form class="well span10" action="html/mail.php" method="POST">
+			<div>
+			<label>First Name</label>
+				<input class="span3" name="fname" type="text" placeholder="Enter First Name"/> 
+			<label>Last Name</label> 
+				<input class="span3" name="lname" type="text" placeholder="Enter Last Name"/>
+			</div>
+			<label>Email</label> 
+				<input class="span3" name="email" type="text" placeholder="Enter Email"/> 
+			<label>Phone Number</label> 
+				<input class="span3" name="phone" type="tel" placeholder="Enter Phone Number"/>
+			<label>Address</label> 
+				<input class="span3" name="street-address" type="text" placeholder="Enter Street Address"/>
+			<label>City</label> 
+				<input class="span3" name="city" type="text" placeholder="Enter City"/> 
+			<label>State</label> 
+				<input class="span3" name="state" type="text" placeholder="Enter State"/> 
+			<label>Zip</label> 
+				<input class="span3" name="zip" type="text" placeholder="Enter State"/>
+			<label>Business Name</label> 
+				<input class="span3" name="business-name" type="text" placeholder="Enter Business Name"/>
+			<label>Message</label> 
+				<textarea name="message"></textarea><br>
+
+			<button class="btn btn-primary" type="submit">Submit</button> <button class="btn" type="reset">Clear</button>
+		</form>
+	</div>
+</div>
+
+<div id="footer">
+	THIS IS FOOTER
+</div>
+
+<!---####################This for Web Image Popup #################-->
+<div modal="isDisplayPopupImage">
+	<div id="imagePopupContainer">
+		<img class="imgWebPopup" style="width:780px; height:540px;" ng-src="{{popupWebArray[popupImageCounter]}}">
+	</div>
+	<div ng-if="!isOnCarouselMode">
+		<ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
+				<li id ="imageLi" ng-if="isEnter" >
+					<img  ng-mouseover="mouseOver($index)" data-ng-repeat="thumbImgUrl in thumbImageWebSite track by $index" class="thumbPopupCarosel" ng-src="{{thumbImgUrl}}"  ng-class="{'smallThumbPopupCarosel': mouseOverIndex != $index , 'bigThumbPopupCarosel': mouseOverIndex === $index}" ng-click="selectThumbPopupImag($index)">
+				</li>
+		</ul>
+	</div>
+	<div id="button">
+		<button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
+		<button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
+		<button ng-click="isDisplayPopupImage=false;isOnCarouselMode= false" ng-disabled="isOnCarouselMode">Close</button>
+		<div ng-show="showPlayCaroselButton">
+			<button ng-click="playCaroselSlideShow();isOnCarouselMode= true">Play</button>
+		</div>
+		<div ng-show="!showPlayCaroselButton">
+			<button ng-click="stopCaroselSlideShow();isOnCarouselMode= false">Stop</button>
+		</div>
+	</div>
+
+</div>
