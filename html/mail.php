@@ -1,21 +1,14 @@
 <?php
-$firstname = $_POST['fname'];
-$lastname = $_POST['lname'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$address = $_POST['street-address'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$zip = $_POST['zip'];
 $bussName = $_POST['business-name'];
 $message = $_POST['message'];
 
-$to = "basharfadil@gmail.com";
+$to = "onezerogurus@gmail.com";
 $subject = "$bussName Website Quote";
-$message = "Full Name: $firstname $lastname \n\n
+$message = "Name: $name \n\n
 			Email: $email -- Phone: $phone \n\n
-			Address: $address \n\n
-			City: $city -- State: $state -- Zip Code: $zip \n\n
 			Bussiness Name: $bussName \n\n
 			Message: $message \n\n";
 $from = "$email";
