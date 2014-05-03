@@ -1,8 +1,12 @@
-<div id="main-header">
-    <div id="logo-name">
-		Logo
+
+<div id="top-menu"><!--main-header-->
+    <div id="logo-container">
+        <a href="" style="text-decoration: none;"><img id="login-image" ng-src="assets/icons/guru.jpg"></a>
+       
+        <p id="logo-name"><span style="color: white;">OneZero</span><span style="color: rgb(2,250,250);padding-left: 8px;">Gurus</span></p>
+       
     </div>
-    <div id="navigation-container">
+    <!--div id="navigation-container">
         <nav id="navigation">
             <a class="nav-item" href="#whatWeDo">What We Do</a>
             <a class="nav-item" href="#WhatWeDone">What We've Done</a>
@@ -10,104 +14,209 @@
             <a class="nav-item" href="#contact">Contact Us</a>
 
         </nav>
+    </div-->
+    <div id="navigation-container">
+        <ul id="navigation">
+            
+            <li>
+                <a class="nav-item" href="#contact-us">Contact Us</a>
+            </li>
+            <li>
+                <a class="nav-item" href="#1">Who We Are</a>
+            </li>
+            <li>
+                <a class="nav-item" href="#what-we-done">What We Done</a>
+            </li>
+             <li class="active">
+                <a class="nav-item" href="what-we-provide">What We Provide</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="horizontalLine"></div>
+<div id="main-body" ng-init="init()">
+    <!--Slider Container Session-->
+    <div class="sliderContainer slider">
+           
+            <img ng-repeat="slide in slides" class="slideImgSize slide slide-animation nonDraggableImage"
+                 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+                 ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+
+            <a class="arrow prev" href="" ng-click="nextSlide()"></a>
+            <a class="arrow next" href="" ng-click="prevSlide()"></a>
+            <nav class="nav">
+                <div class="wrapper">
+                    <ul class="dots">
+                        <li class="dot" ng-repeat="slide in slides">
+                            <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
+                               ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+                    </ul>
+                </div>
+            </nav>
     </div>
 
-</div>
+    <!--What we provide session-->
+    <div>
+        <a id="what-we-provide"></a>
+        <div id="webContainerTitle">What We Provide</div>
+        <div id="what-we-provide-container">Content</div>
+    </div>
 
-<div id="main-body">
-	<div id="top-slideShow">
-		<div ng-init="init()" >
-		    <div style="margin-left:15%;">
-		        <div >
-		            <img style="width:300px;height:300px;"class="slideshowImg  imgStyle" ng-if="counter === 0" ng-src="{{urlImgArray[0]}}" />
-		        </div>
-		        <div >
-		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 1" ng-src="{{urlImgArray[1]}}" />
-		        </div>
-		        <div >
-		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 2" ng-src="{{urlImgArray[2]}}" />
-		        </div>
-				<div >
-		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 3"ng-src="{{urlImgArray[3]}}" />
-		        </div>
-		        <div >
-		        	<img style="width:300px;height:300px;" class="slideshowImg imgStyle" ng-if="counter === 4" ng-src="{{urlImgArray[0]}}" />
-		        </div>
-		    </div>
+        <!--What we done session-->
+    <div id="WebContainer">
+        <a id="what-we-done"></a>
+        <div id="webContainerTitle">What We Done</div>
+        <div style="margin-top:15px; width:100%;height: 429px;">
+            <div id="websiteList-container">
+                
+                <div id="personal-website-container">    
+                    <a href=""><img class="website-home-image" webImageUrlArray ng-src="{{webImageUrlArray[0]}}" ng-click="selectedImage(webImageUrlArray[0])"></a>
+                    <div class="website-introduction-container">
+                        <p class="website-text-header">Personal Website</p>
+                        <p class="website-text-introduction">Introduction of Personal Website</p>
+                    </div>
+                </div>
+                <div id="smallBusiness-website-container">
+                    <a href=""><img class="website-home-image" webImageUrlArray ng-src="{{webImageUrlArray[1]}}" ng-click="selectedImage(webImageUrlArray[1])"></a>
 
-		</div>
-	</div>
+                    <div class="website-introduction-container">
+                        <p class="website-text-header">Small Business Website</p>
+                        <p class="website-text-introduction">Introduction of Small Business Website</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact-container">
+        <a id="1"></a>
+        <div id="contactLabel">Contact Us</div>
+        <div id="contact-Detail-container">
+                <div id="contactDetail">
+                    <p id="contact-info">Contact Info</p>
+                    <p id="contact-phone">Phone: (248)820-5735</p>
+                    <p id="contact-email">Email: onezerogurus@gmail.com</p>
+                </div>
+                <div id="form-container">
+                    <img id="form-icon"ng-src="{{contactImage}}">
+                    <div id="form-message">TALK TO ME</div>
+                    <form  
+                            action="html/mail.php" method="POST">
+                        
+                            <div>
+                                <input style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="name" type="text" placeholder="Name"/> 
+                            </div>
+                            
+                            <div>
+                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);" name="email" type="text" placeholder="Enter Email"/> 
+                            </div>
+                            <div>
+                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="phone" type="tel" placeholder="Enter Phone Number"/>
+                            </div>
+                            <div>
+                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="street-address" type="text" placeholder="Enter Street Address"/>
+                            </div>
+                            <div>
+                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="subject" type="text" placeholder="Subject"/>
+                            </div>
+                            <div>
+                                <textarea style= "width: 87%;background-color: rgb(42,43,44);height: 80px;color:rgb(230,250,250);"name="message" placeholder="Message"></textarea><br>
+                            </div>
+                      
+                        <button  style="background-color: rgba(0,45,42,0.9);color: white;float: right;margin-right: 11%;width: 69px;border-radius: 6px;"type="submit">Send</button> 
+                        <button  style="background-color: rgba(42,42,42,0.9);color: white;float: right;width: 69px;margin-right: 3px;border-radius: 6px;"type="reset">Clear</button>
+                    </form>
+                </div>
+        </div>
+    </div>
 
-	<!--this one for the  Image WebSite-->
-	<div id="WebContainer">
-		<h3 id="webTitle">What We Have Done</h3>
-		<div id="webImageContainer">
-			<ul id="webImageUL">
-				<li data-ng-model="imageUrl" data-ng-repeat="imageUrl in webImageUrlArray track by $index">
-					<div ng-click="selectedImage(imageUrl)">
-						<a href=""><img style="webImageStyle" ng-src="{{imageUrl}}"></a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div id="footer-container">
+           &copy; OneZeroGurus
+    </div>
 
-	<div>
-		<form class="well span10" action="html/mail.php" method="POST">
-			<div>
-			<label>First Name</label>
-				<input class="span3" name="fname" type="text" placeholder="Enter First Name"/> 
-			<label>Last Name</label> 
-				<input class="span3" name="lname" type="text" placeholder="Enter Last Name"/>
-			</div>
-			<label>Email</label> 
-				<input class="span3" name="email" type="text" placeholder="Enter Email"/> 
-			<label>Phone Number</label> 
-				<input class="span3" name="phone" type="tel" placeholder="Enter Phone Number"/>
-			<label>Address</label> 
-				<input class="span3" name="street-address" type="text" placeholder="Enter Street Address"/>
-			<label>City</label> 
-				<input class="span3" name="city" type="text" placeholder="Enter City"/> 
-			<label>State</label> 
-				<input class="span3" name="state" type="text" placeholder="Enter State"/> 
-			<label>Zip</label> 
-				<input class="span3" name="zip" type="text" placeholder="Enter State"/>
-			<label>Business Name</label> 
-				<input class="span3" name="business-name" type="text" placeholder="Enter Business Name"/>
-			<label>Message</label> 
-				<textarea name="message"></textarea><br>
-
-			<button class="btn btn-primary" type="submit">Submit</button> <button class="btn" type="reset">Clear</button>
-		</form>
-	</div>
-</div>
-
-<div id="footer">
-	THIS IS FOOTER
-</div>
 
 <!---####################This for Web Image Popup #################-->
 <div modal="isDisplayPopupImage">
-	<div id="imagePopupContainer">
-		<img class="imgWebPopup" style="width:780px; height:540px;" ng-src="{{popupWebArray[popupImageCounter]}}">
-	</div>
-	<div ng-if="!isOnCarouselMode">
-		<ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
-				<li id ="imageLi" ng-if="isEnter" >
-					<img  ng-mouseover="mouseOver($index)" data-ng-repeat="thumbImgUrl in thumbImageWebSite track by $index" class="thumbPopupCarosel" ng-src="{{thumbImgUrl}}"  ng-class="{'smallThumbPopupCarosel': mouseOverIndex != $index , 'bigThumbPopupCarosel': mouseOverIndex === $index}" ng-click="selectThumbPopupImag($index)">
-				</li>
-		</ul>
-	</div>
-	<div id="button">
-		<button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
-		<button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
-		<button ng-click="isDisplayPopupImage=false;isOnCarouselMode= false" ng-disabled="isOnCarouselMode">Close</button>
-		<div ng-show="showPlayCaroselButton">
-			<button ng-click="playCaroselSlideShow();isOnCarouselMode= true">Play</button>
-		</div>
-		<div ng-show="!showPlayCaroselButton">
-			<button ng-click="stopCaroselSlideShow();isOnCarouselMode= false">Stop</button>
-		</div>
-	</div>
+    <div id="imagePopupContainer">
+        <img class="imgWebPopup" style="width:780px; height:540px;" ng-src="{{popupWebArray[popupImageCounter]}}">
+    </div>
+    <div ng-if="!isOnCarouselMode">
+        <ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
+                <li id ="imageLi" ng-if="isEnter" >
+                    <img  ng-mouseover="mouseOver($index)" data-ng-repeat="thumbImgUrl in thumbImageWebSite track by $index" class="thumbPopupCarosel" ng-src="{{thumbImgUrl}}"  ng-class="{'smallThumbPopupCarosel': mouseOverIndex != $index , 'bigThumbPopupCarosel': mouseOverIndex === $index}" ng-click="selectThumbPopupImag($index)">
+                </li>
+        </ul>
+    </div>
+    <div id="button">
+        <button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
+        <button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
+        <button ng-click="isDisplayPopupImage=false;isOnCarouselMode= false" ng-disabled="isOnCarouselMode">Close</button>
+        <div ng-show="showPlayCaroselButton">
+            <button ng-click="playCaroselSlideShow();isOnCarouselMode= true">Play</button>
+        </div>
+        <div ng-show="!showPlayCaroselButton">
+            <button ng-click="stopCaroselSlideShow();isOnCarouselMode= false">Stop</button>
+        </div>
+    </div>
 
 </div>
+<script>
+    var lastId,
+    topMenu = $("#top-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    }),
+     noScrollAction = false;
+
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+      noScrollAction = true;
+
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, {
+        duration: 300,
+        complete: function() {
+            menuItems
+                .parent().removeClass("active")
+                .end().filter("[href=" + href +"]").parent().addClass("active");
+            setTimeout(function(){ noScrollAction = false; }, 10);
+        }
+    });
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   if(!noScrollAction){
+       // Get container scroll position
+       var fromTop = $(this).scrollTop()+topMenuHeight;
+
+       // Get id of current scroll item
+       var cur = scrollItems.map(function(){
+         if ($(this).offset().top < fromTop)
+           return this;
+       });
+       // Get the id of the current element
+       cur = cur[cur.length-1];
+       var id = cur && cur.length ? cur[0].id : "";
+
+       if (lastId !== id) {
+           lastId = id;
+           // Set/remove active class
+           menuItems
+             .parent().removeClass("active")
+             .end().filter("[href=#"+id+"]").parent().addClass("active");
+       }
+   }         
+});
+</script>

@@ -1,9 +1,21 @@
-webTech.controller('HomePageController', ['$scope','$interval',
-function ($scope,$interval) {
-$scope.item="helllo";
-    $scope.isEnter=false;
-    $scope.counter =0;//index of image
-    $scope.urlImgArray=["assets/imageCarousel/img1.jpg","assets/imageCarousel/img2.jpg","assets/imageCarousel/img3.jpg","assets/imageCarousel/img4.jpg"];
+
+angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
+
+	.config(['$routeProvider', function($routeProvider) {
+'use strict';
+	$routeProvider. when('/',{controller:'MainController', templateUrl:'html/homePage.html'}).
+				   otherwise({redirectTo:"/"})
+
+}])
+	.controller('MainController', function ($scope,$interval) {
+        console.log("hello");
+        $scope.slides = [
+            {image: 'assets/slideShow/img00.jpg', description: 'Image 00'},
+            {image: 'assets/slideShow/img01.jpg', description: 'Image 01'},
+            {image: 'assets/slideShowimages/img02.jpg', description: 'Image 02'},
+            {image: 'assets/slideShow/img03.jpg', description: 'Image 03'},
+            {image: 'assets/slideShow/img04.jpg', description: 'Image 04'}
+        ];
     $scope.webImageUrlArray=["assets/imageWebReferences/personalWebThumb.jpg","assets/imageWebReferences/martialArtWebThumb.jpg"];
 
     $scope.personalWebArray=["assets/personalWeb/mainPics/homePage1.jpg","assets/personalWeb/mainPics/photoPage2.jpg","assets/personalWeb/mainPics/photoPageShot3.jpg","assets/personalWeb/mainPics/musicPage4.jpg",
@@ -18,8 +30,9 @@ $scope.item="helllo";
     $scope.martialArtWebThumbArray=["assets/martialArtWeb/thumbs/thumbHome1.jpg","assets/martialArtWeb/thumbs/thumbGallery2.jpg","assets/martialArtWeb/thumbs/thumbKids3.jpg",
                                     "assets/martialArtWeb/thumbs/thumbWomen4.jpg","assets/martialArtWeb/thumbs/thumbSchedule5.jpg","assets/martialArtWeb/thumbs/thumbContactus6.jpg"];
 
+    //$scope.urlImageArrayLength = $scope.slides.length;
     $scope.popupWebArray=[];//array that content all the image of the websites that display on Popup
-    $scope.timer=4000;
+    $scope.timer=3000;
     $scope.popupTimer=2500;
     $scope.stopTimer="";
     $scope.nextTimer="";
@@ -32,55 +45,66 @@ $scope.item="helllo";
     $scope.caroselButtonLabel="Play";
     $scope.isOnCarouselMode= false;
     $scope.showPlayCaroselButton=true;//show the playCarouseSlideShow at the beginning
-    $scope.init = function(imgArray ){
+    $scope.isEnter=false;
+    $scope.counter =0;//index of image
+    $scope.contactImage="assets/icons/sendMail.jpeg";
+   //-----===========TESTING========================
+        $scope.direction = 'left';
+        $scope.currentIndex = 0;
+
+        $scope.setCurrentSlideIndex = function (index) {
+            $scope.direction = (index > $scope.currentIndex) ? 'left' : 'right';
+            $scope.currentIndex = index;
+        };
+
+        $scope.isCurrentSlideIndex = function (index) {
+            return $scope.currentIndex === index;
+        };
+
+        $scope.prevSlide = function () {
+            $scope.direction = 'left';
+            $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
+        };
+
+
+        $scope.nextSlide = function () {
+            console.log("next");
+            $scope.direction = 'right';
+            $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
+        };
+        console.log("end");
+
+        //=========init==============
+        $scope.init = function(imgArray ){
         
         //$scope.urlImgArray = [];
-        $scope.stopTimer=$interval(function(){
-            $scope.nextImg();
+            $scope.stopTimer=$interval(function(){
+                $scope.nextImg();
 
-        }, $scope.timer);
-    };
-
-    //==========nextImg==========
+            }, $scope.timer);
+        };
+        //==========nextImg==========
     $scope.nextImg=function(){
          $interval.cancel($scope.stopTimer);
          $interval.cancel($scope.preTimer);
 
        // if ($scope.counter < $scope.urlImgArray.length-1){
-            if($scope.counter === $scope.urlImgArray.length-1)
+            if($scope.currentIndex === $scope.slides.length-1)
             {
                  $interval.cancel($scope.nextTimer);
                 $scope.nextTimer=$interval($scope.nextImg,$scope.timer);
-                $scope.counter=0;
+                $scope.currentIndex=0;
             }
            // $timeout($scope.nextImg,$scope.time);
             else
             {
                  $interval.cancel($scope.nextTimer);
                 $scope.nextTimer=$interval($scope.nextImg,$scope.timer);
-                $scope.counter ++;
+                $scope.currentIndex ++;
             }
+        };
 
-
-    };
-    $scope.preImg = function(){
-        $interval.cancel($scope.stopTimer);
-        $interval.cancel($scope.nextTimer);
-        if ($scope.counter ===0){
-            $scope.counter =$scope.urlImgArray.length-1;
-
-            $interval.cancel($scope.preTimer)
-            $scope.preTimer=$interval($scope.nextImg,$scope.timer);
-        }
-        else {
-            $scope.counter --;
-            $interval.cancel($scope.preTimer);
-            $scope.preTimer=$interval($scope.nextImg,$scope.timer);
-        }
-
-    };
-
-   //========================selectedImage=============$
+        //========================selectedImage=============$
    $scope.thumbImageWebSite=[];
    $scope.selectedImage = function(imageUrl){
     console.log("image",imageUrl);
@@ -167,6 +191,45 @@ $scope.item="helllo";
     $scope.selectThumbPopupImag=function(imgIndex){
       console.log("imgIndex",imgIndex);
       $scope.popupImageCounter=imgIndex;
-    }  
+    }
+    })
+	
+	.animation('.slide-animation', function () {
+        return {
+            beforeAddClass: function (element, className, done) {
+                var scope = element.scope();
 
-}]);
+                if (className == 'ng-hide') {
+                    var finishPoint = element.parent().width();
+                    if(scope.direction !== 'right') {
+                        finishPoint = -finishPoint;
+                    }
+                    TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
+                }
+                else {
+                    done();
+                }
+            },
+            removeClass: function (element, className, done) {
+                var scope = element.scope();
+
+                if (className == 'ng-hide') {
+                    element.removeClass('ng-hide');
+
+                    var startPoint = element.parent().width();
+                    if(scope.direction === 'right') {
+                        startPoint = -startPoint;
+                    }
+
+                    TweenMax.fromTo(element, 0.5, { left: startPoint }, {left: 0, onComplete: done });
+                }
+                else {
+                    done();
+                }
+            }
+        };
+    });
+
+
+    
+   
