@@ -67,10 +67,10 @@ body{
     position: fixed;
     z-index: 1;
 }
-#top-menu ul li{
+#navigation li{
     float:right;
 }
-#top-menu ul li a {
+#navigation  li a {
     
     display: block;
     /*padding: 5px 25px 7px 25px;*/
@@ -82,13 +82,16 @@ body{
     color: white;
     text-decoration: none;
 }
-#top-menu ul li.active a {
+#navigation li.active a {
     border-bottom: 3px solid green;
    
     
 }
 
 
+#navigation a:hover {
+    color: #000;
+}
 
 
 

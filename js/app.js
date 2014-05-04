@@ -12,7 +12,7 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
         $scope.slides = [
             {image: 'assets/slideShow/img00.jpg', description: 'Image 00'},
             {image: 'assets/slideShow/img01.jpg', description: 'Image 01'},
-            {image: 'assets/slideShowimages/img02.jpg', description: 'Image 02'},
+            {image: 'assets/slideShow/img02.jpg', description: 'Image 02'},
             {image: 'assets/slideShow/img03.jpg', description: 'Image 03'},
             {image: 'assets/slideShow/img04.jpg', description: 'Image 04'}
         ];
