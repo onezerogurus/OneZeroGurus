@@ -156,18 +156,18 @@ a:active{
     margin-top:80px;
 }
 #imagePopupContainer{
-    width: 780px;
+    width: 679px;
     border: red solid 1px;
-    height: 540px;
+    height: 431px;
     margin-top: 10px;
     margin-left: 10px;
 }
 
 #imageThumbPopupContainer{
    position: absolute;
-    margin-top: -78px;
+    margin-top: -82px;
     border: red 1px solid;
-    width: 740px;
+    width: 678px;
     /* padding-left: 5px; */
     height: 76px;
     margin-left: 10px;
@@ -339,4 +339,24 @@ a:active{
     border: 1px red solid;
 }
 
+
+/* ------------THIS SESSION IS FOR CSS STYLESHEET--------------*/
+#popup-play-button-div{
+    position: absolute;
+    top: 0px;
+}
+#popup-stop-button-div{
+    position: absolute;
+    top: 0px;
+    right:0px;
+}
+#popup-active-button{
+    width: 27px;
+    height: 27px;
+    padding-left: 4px;
+    border-radius: 50%;
+    color: white;
+    background-color: darkred;
+    font-size:9px;
+}
 

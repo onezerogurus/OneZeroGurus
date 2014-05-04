@@ -128,7 +128,7 @@
 <!---####################This for Web Image Popup #################-->
 <div modal="isDisplayPopupImage">
     <div id="imagePopupContainer">
-        <img class="imgWebPopup" style="width:780px; height:540px;" ng-src="{{popupWebArray[popupImageCounter]}}">
+        <img class="imgWebPopup" style="width:679px; height:419px;" ng-src="{{popupWebArray[popupImageCounter]}}">
     </div>
     <div ng-if="!isOnCarouselMode">
         <ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
@@ -138,15 +138,19 @@
         </ul>
     </div>
     <div id="button">
-        <button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
-        <button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
-        <button ng-click="isDisplayPopupImage=false;isOnCarouselMode= false" ng-disabled="isOnCarouselMode">Close</button>
-        <div ng-show="showPlayCaroselButton">
-            <button ng-click="playCaroselSlideShow();isOnCarouselMode= true">Play</button>
+        <div>
+            <button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
         </div>
-        <div ng-show="!showPlayCaroselButton">
-            <button ng-click="stopCaroselSlideShow();isOnCarouselMode= false">Stop</button>
+        <div>
+            <button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
         </div>
+        <div id="popup-stop-button-div" ng-if="!isOnCarouselMode">
+            <button id="popup-active-button" ng-click="exitPopupImageContainer()">Exit</button>
+        </div>
+        <div id="popup-play-button-div">
+            <button id="popup-active-button" ng-click="playCaroselSlideShow();">{{caroselButtonLabel}}</button>
+        </div>
+        
     </div>
 
 </div>

@@ -48,6 +48,7 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
     $scope.isEnter=false;
     $scope.counter =0;//index of image
     $scope.contactImage="assets/icons/sendMail.jpeg";
+    $scope.caroselButtonLabel="play";
    //-----===========TESTING========================
         $scope.direction = 'left';
         $scope.currentIndex = 0;
@@ -150,31 +151,45 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
    //===============caroselButton==================
 
    $scope.playCaroselSlideShow=function(){
+      if( $scope.caroselButtonLabel==="play")
+      { $scope.caroselButtonLabel="stop";
+        $scope.isOnCarouselMode= true;
+        $scope.runPopupCarosel();
+        }
+        else
+        {
+            $scope.caroselButtonLabel="play";
+             $scope.isOnCarouselMode= false;
+            $interval.cancel($scope.popupNextTimer);
+            $scope.showPlayCaroselButton=true;//show the playCarouseSlideShow at the beginning
+        }
+    };
 
-        //==========nextImg==========
+    //============
+    $scope.runPopupCarosel=function() {
+      //==========nextImg==========
          $interval.cancel($scope.popupStopTimer);
        
        // if ($scope.counter < $scope.urlImgArray.length-1){
             if($scope.popupImageCounter === $scope.popupWebArray.length-1)
             {
                  $interval.cancel($scope.popupNextTimer);
-                $scope.popupNextTimer=$interval($scope.playCaroselSlideShow,$scope.popupTimer);
+                $scope.popupNextTimer=$interval($scope.runPopupCarosel,$scope.popupTimer);
                 $scope.popupImageCounter=0;
             }
            // $timeout($scope.nextImg,$scope.time);
             else
             {
                  $interval.cancel($scope.popupNextTimer);
-                $scope.popupNextTimer=$interval($scope.playCaroselSlideShow,$scope.popupTimer);
+                $scope.popupNextTimer=$interval($scope.runPopupCarosel,$scope.popupTimer);
                 $scope.popupImageCounter ++;
             }
              $scope.showPlayCaroselButton=false;//hide the playCarouseSlideShow at the beginning
-
-    };
+    }
     //==============stopCaroselSlideShow================
-    $scope.stopCaroselSlideShow=function(){
-        $interval.cancel($scope.popupNextTimer);
-         $scope.showPlayCaroselButton=true;//show the playCarouseSlideShow at the beginning
+    $scope.exitPopupImageContainer=function(){
+        $scope.isDisplayPopupImage=false;
+        $scope.isOnCarouselMode=false;
     };
 
     //=============mouseOver==============
