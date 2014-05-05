@@ -1,5 +1,5 @@
 
-<div id="top-menu"><!--main-header-->
+<header class="large"><!--main-header-->
     <div id="logo-container">
         <a href="" style="text-decoration: none;"><img id="login-image" ng-src="assets/icons/guru.jpg"></a>
        
@@ -22,10 +22,12 @@
              <li>
                 <a class="nav-item" href="#what-we-provide">What We Provide</a>
             </li>
-            
+            <li>
+                <a href="#"></a>
+            </li>
         </ul>
     </div>
-</div>
+</header>
 
 <div id="horizontalLine"></div>
 <div id="main-body" ng-init="init()">
@@ -180,7 +182,7 @@ menuItems.click(function(e){
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight-400;
+   var fromTop = $(this).scrollTop()+topMenuHeight +10;
    
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
@@ -199,4 +201,35 @@ $(window).scroll(function(){
          .end().filter("[href=#"+id+"]").parent().addClass("active");
    }                   
 });
+
+    $(function(){
+        $('#top-menu').data('size','big');
+    });
+
+    /*$(window).scroll(function(){
+    var $nav = $('#top-menu');
+    if ($('body').scrollTop() > 0) {
+        if ($nav.data('size') == 'big') {
+            $nav.data('size','small').stop().animate({
+                height:'82px'
+                
+            }, 600);
+        }
+    } else {
+        if ($nav.data('size') == 'small') {
+            $nav.data('size','big').stop().animate({
+                height:'92px'
+
+            }, 600);
+        }  
+    }
+});*/
+$(document).on("scroll",function(){
+    if($(document).scrollTop()>100){
+        $("header").removeClass("large").addClass("small");
+    } else{
+        $("header").removeClass("small").addClass("large");
+    }
+});
+
 </script>
