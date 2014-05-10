@@ -14,7 +14,7 @@
                 <a class="nav-item" href="#contact-us">Contact Us</a>
             </li>
             <li>
-                <a class="nav-item" href="#b2">Who We Are</a>
+                <a class="nav-item" href="#who-we-are">Who We Are</a>
             </li>
             <li>
                 <a class="nav-item" href="#what-we-done">What We Done</a>
@@ -23,7 +23,7 @@
                 <a class="nav-item" href="#what-we-provide">What We Provide</a>
             </li>
             <li>
-                <a href="#"></a>
+                <a class="ACTIVE nav-item" href="#home">Home</a>
             </li>
         </ul>
     </div>
@@ -32,6 +32,7 @@
 <div id="horizontalLine"></div>
 <div id="main-body" ng-init="init()">
     <!--Slider Container Session-->
+    <a id="home"></a>
     <div class="sliderContainer slider">
            
             <img ng-repeat="slide in slides" class="slideImgSize slide slide-animation nonDraggableImage"
@@ -54,14 +55,14 @@
     <!--What we provide session-->
     <div>
         <a id="what-we-provide"></a>
-        <div id="webContainerTitle">What We Provide</div>
+        <div class="session-title">What We Provide</div>
         <div id="what-we-provide-container">Content</div>
     </div>
 
         <!--What we done session-->
     <div id="WebContainer">
         <a id="what-we-done"></a>
-        <div id="webContainerTitle">What We Done</div>
+        <div class="session-title">What We Done</div>
         <div style="margin-top:15px; width:100%;height: 429px;">
             <div id="websiteList-container">
                 
@@ -83,9 +84,16 @@
             </div>
         </div>
     </div>
+
+     <!--Who we are-->
+    <div id="who-we-are-container">
+        <a id="who-we-are"></a>
+        <div class="session-title">Who We Are</div>
+        <div id="who-we-are-container">Content</div>
+    </div>
     <div id="contact-container">
-        <a id="b2"></a>
-        <div id="contactLabel">Contact Us</div>
+        <a id="contact-us"></a>
+        <div class="session-title">Contact Us</div>
         <div id="contact-Detail-container">
                 <div id="contactDetail">
                     <p id="contact-info">Contact Info</p>
@@ -130,28 +138,28 @@
 <!---####################This for Web Image Popup #################-->
 <div modal="isDisplayPopupImage">
     <div id="imagePopupContainer">
-        <img class="imgWebPopup" style="width:679px; height:419px;" ng-src="{{popupWebArray[popupImageCounter]}}">
+        <img id="imgWebPopup"ng-src="{{popupWebArray[popupImageCounter]}}">
     </div>
     <div ng-if="!isOnCarouselMode">
         <ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
                 <li id ="imageLi" ng-if="isEnter" >
-                    <img  ng-mouseover="mouseOver($index)" data-ng-repeat="thumbImgUrl in thumbImageWebSite track by $index" class="thumbPopupCarosel" ng-src="{{thumbImgUrl}}"  ng-class="{'smallThumbPopupCarosel': mouseOverIndex != $index , 'bigThumbPopupCarosel': mouseOverIndex === $index}" ng-click="selectThumbPopupImag($index)">
+                    <a href=""><img  ng-mouseover="mouseOver($index)" data-ng-repeat="thumbImgUrl in thumbImageWebSite track by $index" class="thumbPopupCarosel" ng-src="{{thumbImgUrl}}"  ng-class="{'smallThumbPopupCarosel': mouseOverIndex != $index , 'bigThumbPopupCarosel': mouseOverIndex === $index}" ng-click="selectThumbPopupImag($index)"></a>
                 </li>
         </ul>
     </div>
     <div id="button">
-        <div>
-            <button ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
+        <div id="Next-Button-Style">
+            <button class ="Next-Pre-Button"ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
         </div>
-        <div>
-            <button ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
+        <div id="Pre-Button-Style">
+            <button class="Next-Pre-Button" ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
         </div>
-        <div id="popup-stop-button-div" ng-if="!isOnCarouselMode">
-            <button id="popup-active-button" ng-click="exitPopupImageContainer()">Exit</button>
-        </div>
-        <div id="popup-play-button-div">
-            <button id="popup-active-button" ng-click="playCaroselSlideShow();">{{caroselButtonLabel}}</button>
-        </div>
+        <a href=""><div id="popup-stop-button-div" ng-if="!isOnCarouselMode">
+            <div id="popup-active-button" ng-click="exitPopupImageContainer()">Exit</div>
+        </div></a>
+         <a href=""><div id="popup-play-button-div">
+           <div id="popup-active-button" ng-click="playCaroselSlideShow();">{{caroselButtonLabel}}</div>
+        </div></a>
         
     </div>
 
@@ -160,7 +168,7 @@
 // Cache selectors
 var lastId,
     topMenu = $("#navigation"),
-    topMenuHeight = topMenu.outerHeight()+50,
+    topMenuHeight = topMenu.outerHeight()-15,
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
@@ -181,8 +189,13 @@ menuItems.click(function(e){
 
 // Bind to scroll
 $(window).scroll(function(){
+     if($(document).scrollTop()>30){
+        $("header").removeClass("large").addClass("small");
+    } else{
+        $("header").removeClass("small").addClass("large");
+    }
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight +10;
+   var fromTop = $(this).scrollTop()+topMenuHeight -120;
    
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
@@ -197,39 +210,20 @@ $(window).scroll(function(){
        lastId = id;
        // Set/remove active class
        menuItems
-         .parent().removeClass("active")
-         .end().filter("[href=#"+id+"]").parent().addClass("active");
-   }                   
+         .parent().removeClass("ACTIVE")
+         .end().filter("[href=#"+id+"]").parent().addClass("ACTIVE");
+   }                
 });
 
     $(function(){
         $('#top-menu').data('size','big');
     });
 
-    /*$(window).scroll(function(){
-    var $nav = $('#top-menu');
-    if ($('body').scrollTop() > 0) {
-        if ($nav.data('size') == 'big') {
-            $nav.data('size','small').stop().animate({
-                height:'82px'
-                
-            }, 600);
-        }
-    } else {
-        if ($nav.data('size') == 'small') {
-            $nav.data('size','big').stop().animate({
-                height:'92px'
-
-            }, 600);
-        }  
-    }
-});*/
-$(document).on("scroll",function(){
-    if($(document).scrollTop()>100){
-        $("header").removeClass("large").addClass("small");
-    } else{
-        $("header").removeClass("small").addClass("large");
-    }
+/*-----------Make The Home Page Become active at the time loading the page*/
+jQuery( document ).ready( function ( $ ) {
+    // Add first and last menu item classes
+   
+    $('ul#navigation li:last-child').addClass( 'ACTIVE' );
 });
 
 </script>

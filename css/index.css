@@ -10,8 +10,27 @@ body{
     margin-right:auto;
     margin-top:0;
     margin-bottom:0;
+
+    
     
    /* background-color: rgb(169,171,170);*/
+}
+body a:link{
+    text-decoration:none;
+    color:white;
+    }
+body a:visited{
+    text-decoration:none;
+    color:rgb(81,156,225);
+}
+
+body a:hover{
+    text-decoration:none;
+    color: rgb(151,181,211);
+}
+
+body a:active{
+    text-decoration:none;
 }
 
 /*#main-header{
@@ -24,7 +43,9 @@ body{
     position: fixed;
     z-index: 1;
 }*/
-
+/*#home{margin-top:60px;
+    position: absolute;
+z-index: 100000;}*/
 
 #logo-container{
     border-radius: 50%; 
@@ -45,7 +66,7 @@ body{
 }
 #navigation-container{
     float: right;
-    width: 500px;
+    width: 600px;
     margin-top: 42px;
 }
 
@@ -55,6 +76,7 @@ body{
     margin-right:auto;
     text-align:right;
     font-size:14px;
+    list-style-type: none;
 
 }
 header{
@@ -67,16 +89,24 @@ header{
     position: fixed;
     z-index: 1;
 }
-header.small {height:82px;}
-header.small #login-image{width:50px;}
+header.small {height:60px; background-color:rgb(42,43,44);}
+header.small #logo-container{font-size: 22px;}
+header.small #login-image{width:40px;margin-top:8px;}
+header.small #logo-name{margin-top:27px;margin-left:2px;}
+header.small #navigation-container{margin-top:21px;}
+header.small #navigation{font-size:14px;}
+header.small #navigation li.ACTIVE a {border-bottom: 2px solid green;text-decoration: none;}
+header.small #navigation li a {border-bottom: 2px solid rgb(42,43,44);text-decoration: none;}
+
 #navigation li{
     float:right;
+    
 }
 #navigation  li a {
     
     display: block;
     /*padding: 5px 25px 7px 25px;*/
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px 0px 5px;
     -webkit-transition: 1s all ease;
     -moz-transition: 1s all ease;
     transition: 1s all ease;
@@ -84,12 +114,10 @@ header.small #login-image{width:50px;}
     color: white;
     text-decoration: none;
 }
-#navigation li.active a {
+#navigation li.ACTIVE a {
     border-bottom: 3px solid green;
-   
-    
+     text-decoration: none;    
 }
-
 
 #navigation a:hover {
     color: #000;
@@ -102,24 +130,7 @@ header.small #login-image{width:50px;}
 }
 
 
-a:link{
-    text-decoration:none;
-    color:white;
-}
 
-a:visited{
-    text-decoration:none;
-    color:rgb(81,156,225);
-}
-
-a:hover{
-    text-decoration:none;
-    color: rgb(151,181,211);
-}
-
-a:active{
-    text-decoration:none;
-}
 #horizontalLine{
     margin: 0px;
     width: 100%;
@@ -159,21 +170,24 @@ a:active{
 }
 #imagePopupContainer{
     width: 679px;
-    border: red solid 1px;
+    /*border: red solid 1px;*/
     height: 431px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 18px;
+    margin-left: 26px;
 }
 
 #imageThumbPopupContainer{
    position: absolute;
     margin-top: -82px;
-    border: red 1px solid;
+   /* border: red 1px solid;*/
     width: 678px;
     /* padding-left: 5px; */
     height: 76px;
-    margin-left: 10px;
-    margin-right: auto;
+    margin-left: 25px;
+   list-style-type: none;
+}
+#imageThumbPopupContainer li a {
+    text-decoration: none;
 }
 .thumbPopupCarosel{
     width:11%;
@@ -188,12 +202,12 @@ a:active{
     height:auto;
 }
 #imageLi{
-    border: red solid 1px;
+    /*border: red solid 1px;*/
     margin-top: 3px;
     padding-top: 4px;
     text-align: center;
 }
-#webContainerTitle{
+.session-title{
     width: 97%;
     border: red 1px solid;
     margin-left: auto;
@@ -264,6 +278,14 @@ a:active{
     border: 1px red solid;
     margin-top: 25px;
 }
+
+#who-we-are-container{
+    border:solid 1px red;
+    height:500px;
+}
+
+
+
 #contact-container{
     border: 1px red solid;
    /* background-color: rgb(168,160,143);*/
@@ -271,7 +293,7 @@ a:active{
     height: 500px;
 
 }
-#contactLabel{
+/*#contactLabel{
     width: 97%;
     border: red 1px solid;
     margin-left: auto;
@@ -284,7 +306,7 @@ a:active{
     background-color: rgb(42,43,44);
     padding-left: 15px;
     border-radius: 5px;
-}
+}*/
 
 #contactDetail{
     width: 30%;
@@ -346,19 +368,57 @@ a:active{
 #popup-play-button-div{
     position: absolute;
     top: 0px;
+    left:0px;
+    width: 27px;
+    height: 31px;
+    /*border: yellow 1px solid;*/
+    padding-left: 5px;
+    border-radius: 50%;
+    color: white;
+    background-color: darkred;
 }
 #popup-stop-button-div{
     position: absolute;
     top: 0px;
     right:0px;
-}
-#popup-active-button{
     width: 27px;
-    height: 27px;
-    padding-left: 4px;
+    height: 31px;
+   /* border: yellow 1px solid;*/
+    padding-left: 5px;
     border-radius: 50%;
     color: white;
     background-color: darkred;
-    font-size:9px;
+}
+a:hover #popup-play-button-div{
+    background-color:green;
+    }
+a:hover #popup-stop-button-div{
+     background-color:green;
+}
+#popup-active-button{
+    padding-top: 5px;
+    padding-left: 0px;
+    color: white;
+    font-size:12px;
 }
 
+#imgWebPopup{
+    width:679px; 
+    height:419px;
+    border-radius:20px;
+}
+.Next-Pre-Button{
+    width: 74px;
+    height: 34px;
+    font-size: 23px;
+}
+#Next-Button-Style{
+    float: left;
+    margin-left: 275px;
+    margin-bottom: 7px;
+}
+#Pre-Button-Style{
+    float: right;
+    margin-right: 275px;
+    margin-bottom: 7px;
+}
