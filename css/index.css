@@ -1,18 +1,17 @@
 html{
     width:100%;
     height:100%;
-    font-family: 'Changa One', cursive;
 }
 
 body{
-    
     width:1000px;
     height:100%;
     margin-left:auto;
     margin-right:auto;
     margin-top:0;
     margin-bottom:0;
-    background-color: #1ab26d;
+    
+   /* background-color: rgb(169,171,170);*/
 }
 
 /*#main-header{
@@ -41,51 +40,33 @@ body{
 }
 #logo-name{
     float: left;
-    margin-top: 20px;
+    margin-top: 39px;
     margin-left: 5px;
-}
-#guruTitle{
-    font-family: 'Changa One', cursive;
-    font-size: 45px;
-    color: #1ab26d;
-    text-shadow: 0px 2px 3px #555;
-    margin-left: 5px;
-}
-#oneZeroTitle{
-    font-family: 'Dosis', sans-serif;
-    color:white;
 }
 #navigation-container{
     float: right;
-    width: 600px;
-    margin-top: 30px;
+    width: 500px;
+    margin-top: 42px;
 }
 
 #navigation{
-    margin-left: auto;
-    margin-right: auto;
-    list-style-type: none;
-}
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:right;
+    font-size:14px;
 
+}
 header{
-
-    background-color: #ff6025;
--moz-border-radius: 5px 5px 10px 10px;
--webkit-border-radius: 5px 5px 10px 10px;
-border-radius: 5px 5px 10px 10px;
--moz-box-shadow: 0px 0px 6px #000000;
--webkit-box-shadow: 0px 0px 6px #000000;
-box-shadow: 0px 0px 6px #000000;
-
-height: 92px;
-margin-top: 0;
-width: 1015px;
-position: fixed;
-z-index: 1;
-margin-left: -5.5px;
-
+    background-color: rgb(42,43,44);
+    height: 92px;
+    /*width: 100%;*/
+    margin-top: 0;
+    
+    width:1000px;
+    position: fixed;
+    z-index: 1;
 }
-
 header.small {height:82px;}
 header.small #login-image{width:50px;}
 #navigation li{
@@ -148,15 +129,9 @@ a:active{
 #main-body{
     margin-top: 79px;
     width: 100%;
-    height: 2010px;
-    background-color: #ff6025;
-    border: 2px solid #999999;
-    -moz-border-radius: 5px 5px 10px 10px;
-    -webkit-border-radius: 5px 5px 10px 10px;
-    border-radius: 5px 5px 10px 10px;
-    -moz-box-shadow: 0px 0px 25px 2px #000000;
-    -webkit-box-shadow: 0px 0px 25px 2px #000000;
-    box-shadow: 0px 0px 25px 2px #000000;
+    border: 1px red solid;
+    background-color: rgb(168,160,143);
+   /* background-color:rgb(169,171,170)*/
 }
 #top-slideShow{
   border:1px red solid;
@@ -169,15 +144,14 @@ a:active{
 }
 
 #footer-container{
+     border: 1px solid red;
     width: 100%;
-    height: 30px;
+    height: 40px;
     text-align: center;
     background-color: rgb();
-    background-color: #1ab26d;
-    color: #ff6025;
-    -moz-border-radius: 10px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    text-shadow: 1px 3px 4px #555;
+    background-color: rgb(64,64,64);
+    color: rgb(220,250,250);
+    padding-top: 20px;
 }
 
 #content-container{
@@ -220,71 +194,57 @@ a:active{
     text-align: center;
 }
 #webContainerTitle{
-    width: 98%;
-    height: 42px;
+    width: 97%;
+    border: red 1px solid;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7px;
-    font-family: 'Changa One', cursive;
+    height: 42px;
     font-size: 43px;
-    padding-top: 15px;
+    margin-top: 13px;
+    padding-top: 25px;
+    color: white;
+    background-color: rgb(42,43,44);
     padding-left: 15px;
-    color: #ff6025;
-    text-shadow: 1px 3px 4px #555;
-    padding-bottom: 15px;
-    background-color: #1ab26d;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
+    border-radius: 5px;
 }
 #what-we-provide-container{
     height:500px;
-    color: white;
-    margin-top: 10px;
 }
 #websiteList-container{
     width: 98%;
-    margin-top: 25px;
+    border: 1px red solid;
     margin-left: auto;
     margin-right: auto;
 }
 #personal-website-container{
-    width: 25%;
+    border: red 1px solid;
+    width: 45%;
     height: auto;
     float: left;
-    margin-left: 30px;
+    margin-left: 31px;
 }
 #smallBusiness-website-container{
-    width: 25%;
+   border: red 1px solid;
+    width: 45%;
     height: auto;
     float: left;
-    margin-left: 30px;
+    padding-left: 34px
 }
 .website-home-image{
     width: 100%;
     height: auto;
 }
 .website-introduction-container{
+    border: 1px red solid;
     width: 100%;
     height: 150px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    background-color: #1ab26d;
 }
 .website-text-header{
     padding-top: 10px;
     padding-left: 40px;
     font-size: 22px;
     font-weight: 500;
-    color: #ff6025;
-    text-shadow: 1px 3px 4px #555;
+    color: rgb(71, 82, 92);
 }
 .website-text-introduction{
     padding-left: 40px;
@@ -292,34 +252,38 @@ a:active{
     color: whitesmoke;
 }
 #contact-Detail-container{
+   /* background-color: #ffffff;
+    border: 2px solid #858585;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS
+    -moz-box-shadow: 0px 0px 20px #000000;
+    -webkit-box-shadow: 0px 0px 20px #000000;
+    box-shadow: 0px 0px 20px #000000;*/
+    border: 1px red solid;
     margin-top: 25px;
 }
 #contact-container{
+    border: 1px red solid;
+   /* background-color: rgb(168,160,143);*/
     width: 100%;
     height: 500px;
-    margin-top: 475px;
 
 }
 #contactLabel{
-    width: 98%;
-    height: 42px;
+    width: 97%;
+    border: red 1px solid;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7px;
-    font-family: 'Changa One', cursive;
+    height: 42px;
     font-size: 43px;
-    padding-top: 15px;
+    margin-top: 23px;
+    padding-top: 25px;
+    color: white;
+    background-color: rgb(42,43,44);
     padding-left: 15px;
-    color: #ff6025;
-    text-shadow: 1px 3px 4px #555;
-    padding-bottom: 15px;
-    background-color: #1ab26d;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
+    border-radius: 5px;
 }
 
 #contactDetail{
@@ -348,9 +312,10 @@ a:active{
     padding-top: 2px;
 }
 #form-container{
-    width: 95%;
-    margin-left:auto;
-    margin-right:auto;
+    width: 59%;
+    float: right;
+    border: 1px red solid;
+    padding-left: 59px;"
 }
 #form-icon{
     width: 43px;
@@ -368,136 +333,12 @@ a:active{
 /* padding-left: 32px; */
     margin-left: 51px; 
 }
-
-#sendButton{
-    width: 180px;
-    height: 35px;
-    font-size: 20px;
-    /* border: 1px solid white; */
-    color: white;
-    background-color: #1ab26d;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 200px;
-    margin-top: 20px;
-}
-
-#clearButton{
-    width: 180px;
-    height: 35px;
-    font-size: 20px;
-    /* border: 1px solid white; */
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 200px;
-    margin-top: 20px;
-}
 .form-input{
 
 }
 #WebContainer{
     
-    
-}
-
-#fnameFormInput{
-    width: 430px;
-    height: 30px;
-    font-size: 20px;
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 10px;
-}
-#lnameFormInput{
-    width: 430px;
-    height: 30px;
-    font-size: 20px;
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 50px;
-}
-#emailFormInput{
-    width: 266px;
-    height: 30px;
-    font-size: 20px;
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 10px;
-    margin-top: 20px;
-}
-#phoneFormInput{
-    width: 266px;
-    height: 30px;
-    font-size: 20px; 
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 50px;
-    margin-top: 20px;
-
-}
-#bnameFormInput{
-    width: 266px;
-    height: 30px;
-    font-size: 20px;
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 50px;
-    margin-top: 20px;
-}
-#messageFormInput{
-    width: 915px;
-    height: 146px;
-    font-size: 20px;
-    color: #1ab26d;
-    background-color: white;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 0px 4px #000000;
-    -webkit-box-shadow: 0px 0px 4px #000000;
-    box-shadow: 0px 0px 4px #000000;
-    margin-left: 10px;
-    margin-top: 20px;
+    border: 1px red solid;
 }
 
 

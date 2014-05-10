@@ -1,6 +1,5 @@
 <?php
-$lname = $_POST['lname'];
-$fname = $_POST['fname'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $bussName = $_POST['business-name'];
@@ -8,7 +7,7 @@ $message = $_POST['message'];
 
 $to = "onezerogurus@gmail.com";
 $subject = "$bussName Website Quote";
-$message = "Name: $fname $lname\n\n
+$message = "Name: $name \n\n
 			Email: $email -- Phone: $phone \n\n
 			Bussiness Name: $bussName \n\n
 			Message: $message \n\n";
