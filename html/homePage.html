@@ -1,10 +1,6 @@
-
 <header class="large"><!--main-header-->
     <div id="logo-container">
-        <a href="" style="text-decoration: none;"><img id="login-image" ng-src="assets/icons/guru.jpg"></a>
-       
-        <p id="logo-name"><span style="color: white;">OneZero</span><span style="color: rgb(2,250,250);padding-left: 8px;">Gurus</span></p>
-       
+        <p id="logo-name"><span id="oneZeroTitle">OneZero</span><span id="guruTitle">Gurus</span></p>
     </div>
    
     <div id="navigation-container">
@@ -16,9 +12,9 @@
             <li>
                 <a class="nav-item" href="#who-we-are">Who We Are</a>
             </li>
-            <li>
+            <!--li>
                 <a class="nav-item" href="#what-we-done">What We Done</a>
-            </li>
+            </li-->
              <li>
                 <a class="nav-item" href="#what-we-provide">What We Provide</a>
             </li>
@@ -55,15 +51,21 @@
     <!--What we provide session-->
     <div>
         <a id="what-we-provide"></a>
-        <div class="session-title">What We Provide</div>
-        <div id="what-we-provide-container">Content</div>
+        <div id="webContainerTitle">What We Provide</div>
+        <div id="what-we-provide-container">SAMPLE TEXT <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar molestie justo eu ultrices. Nullam sit amet ornare tellus. Nam enim enim, dignissim eu tellus sit amet, posuere interdum urna. Quisque a pharetra libero. Pellentesque leo libero, malesuada ac eros lacinia, imperdiet vulputate metus. Vestibulum ut lectus in dui adipiscing rhoncus id ac tortor. Donec id nisl ut enim auctor vehicula. Donec congue, risus vel aliquet commodo, arcu quam facilisis diam, nec pharetra purus metus id neque. Cras scelerisque auctor arcu a interdum. Etiam sollicitudin rhoncus arcu, et iaculis neque volutpat id. Nam quis tortor viverra mi dapibus porta.
+
+        Vivamus interdum tellus odio. Donec feugiat ultrices arcu in auctor. Morbi tincidunt magna vitae ultricies lacinia. Duis consequat et diam id egestas. Donec venenatis ultricies justo nec laoreet. Mauris mattis lorem vitae nulla dignissim ultricies. Ut ac lacus nibh. Curabitur elementum a nisl viverra commodo. Duis et sapien a arcu tristique eleifend sit amet in sapien. Suspendisse potenti. Vivamus lectus arcu, sagittis ac ullamcorper adipiscing, auctor sed lorem. Aenean auctor enim id mollis sodales.
+
+        Morbi pharetra pharetra imperdiet. Cras elementum tempus purus nec scelerisque. In et vehicula ligula. Quisque est sem, commodo id tellus tempus, eleifend convallis ipsum. Aliquam adipiscing turpis enim. In scelerisque quis metus non tincidunt. Mauris eu ligula ac felis porttitor cursus consequat egestas dolor. Fusce ornare pellentesque aliquam. Duis facilisis vehicula odio, vel luctus velit aliquet ut. Donec vitae lacus mollis, commodo sem eget, dignissim orci.
+
+        Maecenas ac mauris consequat, ornare justo sed, feugiat neque. Aliquam ac dictum neque. Aliquam dictum tellus ac erat sollicitudin, quis interdum mauris egestas. Curabitur at turpis vel tellus varius iaculis. Vestibulum tincidunt urna sodales sapien lobortis, a sollicitudin lacus tincidunt. In pretium lacus ligula. Quisque tincidunt fermentum eros, vitae tincidunt lorem auctor ut. Vivamus et mi tristique, dictum est at, adipiscing augue. Cras mollis, nunc ac placerat consectetur, mi turpis pellentesque libero, non congue eros mi a arcu. Vestibulum urna sapien, condimentum eget felis a, pulvinar molestie orci. Maecenas non nibh in nunc malesuada vulputate. Praesent purus massa, tincidunt at egestas vel, venenatis sit amet justo. Vestibulum dignissim mauris massa.</div>
     </div>
 
         <!--What we done session-->
     <div id="WebContainer">
         <a id="what-we-done"></a>
-        <div class="session-title">What We Done</div>
-        <div style="margin-top:15px; width:100%;height: 429px;">
+        <div id="webContainerTitle">What We Done</div>
+        <div>
             <div id="websiteList-container">
                 
                 <div id="personal-website-container">    
@@ -86,52 +88,39 @@
     </div>
 
      <!--Who we are-->
-    <div id="who-we-are-container">
+    <!--div id="who-we-are-container">
         <a id="who-we-are"></a>
         <div class="session-title">Who We Are</div>
         <div id="who-we-are-container">Content</div>
-    </div>
+    </div-->
+
+
     <div id="contact-container">
         <a id="contact-us"></a>
-        <div class="session-title">Contact Us</div>
+        <div id="contactLabel">Contact Us</div>
         <div id="contact-Detail-container">
-                <div id="contactDetail">
-                    <p id="contact-info">Contact Info</p>
-                    <p id="contact-phone">Phone: (248)820-5735</p>
-                    <p id="contact-email">Email: onezerogurus@gmail.com</p>
-                </div>
                 <div id="form-container">
-                    <img id="form-icon"ng-src="{{contactImage}}">
-                    <div id="form-message">TALK TO ME</div>
-                    <form  
-                            action="html/mail.php" method="POST">
-                        
-                            <div>
-                                <input style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="name" type="text" placeholder="Name"/> 
-                            </div>
-                            
-                            <div>
-                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);" name="email" type="text" placeholder="Enter Email"/> 
-                            </div>
-                            <div>
-                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="phone" type="tel" placeholder="Enter Phone Number"/>
-                            </div>
-                            <div>
-                                <input  style="background-color: rgb(42,43,44);width: 87%;color:rgb(230,250,250);"name="business-name" type="text" placeholder="Enter Business Name"/>
-                            </div>
-                            <div>
-                                <textarea style= "width: 87%;background-color: rgb(42,43,44);height: 80px;color:rgb(230,250,250);"name="message" placeholder="Message"></textarea><br>
-                            </div>
-                      
-                        <button  style="background-color: rgba(0,45,42,0.9);color: white;float: right;margin-right: 11%;width: 69px;border-radius: 6px;"type="submit">Send</button> 
-                        <button  style="background-color: rgba(42,42,42,0.9);color: white;float: right;width: 69px;margin-right: 3px;border-radius: 6px;"type="reset">Clear</button>
+                    <form action="html/mail.php" method="POST">
+                        <div id="leftFormColumn">
+                            <input  id="fnameFormInput" name="fname" type="text" placeholder="First Name"/><br>
+                            <input  id="lnameFormInput" name="lname" type="text" placeholder="Last Name"/><br>
+                            <input  id="emailFormInput" name="email" type="text" placeholder="Enter Email"/><br>
+                            <input  id="phoneFormInput" name="phone" type="tel" placeholder="Enter Phone Number"/><br>
+                            <input  id="bnameFormInput" name="business-name" type="text" placeholder="Enter Business Name"/><br>
+                        </div>
+                        <div id="rightFormColumn">
+                            <textarea id="messageFormInput" name="message" placeholder="Message"></textarea><br> 
+                            <button id="clearButton" type="reset">Clear</button>
+                            <button id="sendButton" type="submit">Send</button>
+                        </div>
                     </form>
                 </div>
         </div>
     </div>
+
     <a id="contact-us"></a>
     <div id="footer-container">
-           &copy; OneZeroGurus
+           &copy; OneZeroGurus - <span id="contact-phone">Phone: (248)820-5735</span>
     </div>
 
 
