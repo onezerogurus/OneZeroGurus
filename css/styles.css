@@ -126,3 +126,28 @@ NAV
     border-color: #FFF;
     background-color: transparent;
 }
+.Next-Pre-Button{
+
+margin-top: 2%;
+margin-bottom: 2%;
+width: 74px;
+height: 31px;
+border-radius: 9px;
+background-color: greenyellow;
+color: crimson;
+font-weight: bolder;
+}
+.carlNextButton{
+    float:left;
+    margin-left: 5%;
+}
+.carlPreButton{
+    float:right;
+    margin-right:5%;
+}
+
+
+#imageWebPopup{
+    width: 100%;
+    height: 100%;
+}

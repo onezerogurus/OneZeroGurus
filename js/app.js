@@ -10,25 +10,25 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
 	.controller('MainController', function ($scope,$interval) {
         console.log("hello");
         $scope.slides = [
-            {image: 'assets/slideShow/img00.jpg', description: 'Image 00'},
-            {image: 'assets/slideShow/img01.jpg', description: 'Image 01'},
-            {image: 'assets/slideShow/img02.jpg', description: 'Image 02'},
-            {image: 'assets/slideShow/img03.jpg', description: 'Image 03'},
-            {image: 'assets/slideShow/img04.jpg', description: 'Image 04'}
+            {image: 'assets/images/slideShow/img00.jpg', description: 'Image 00'},
+            {image: 'assets/images/slideShow/img01.jpg', description: 'Image 01'},
+            {image: 'assets/images/slideShow/img02.jpg', description: 'Image 02'},
+            {image: 'assets/images/slideShow/img03.jpg', description: 'Image 03'},
+            {image: 'assets/images/slideShow/img04.jpg', description: 'Image 04'}
         ];
-    $scope.webImageUrlArray=["assets/imageWebReferences/personalWebThumb.jpg","assets/imageWebReferences/martialArtWebThumb.jpg"];
+    $scope.webImageUrlArray=["assets/images/imageWebReferences/personalWebThumb.jpg","assets/images/imageWebReferences/martialArtWebThumb.jpg"];
 
-    $scope.personalWebArray=["assets/personalWeb/mainPics/homePage1.jpg","assets/personalWeb/mainPics/photoPage2.jpg","assets/personalWeb/mainPics/photoPageShot3.jpg","assets/personalWeb/mainPics/musicPage4.jpg",
-                             "assets/personalWeb/mainPics/musicPageShot5.jpg","assets/personalWeb/mainPics/collectionPage6.jpg","assets/personalWeb/mainPics/collectionPageShot7.jpg",
-                             "assets/personalWeb/mainPics/aboutPage8.jpg","assets/personalWeb/mainPics/contactPage9.jpg"];
-    $scope.webImageThumbsArray =["assets/personalWeb/thumbs/thumbHomePage1.jpg","assets/personalWeb/thumbs/thumbPhotoPage2.jpg","assets/personalWeb/thumbs/thumbPhotoPageShot3.jpg","assets/personalWeb/thumbs/thumbMusicPage4.jpg",
-                 "assets/personalWeb/thumbs/thumbMusicPageShot5.jpg","assets/personalWeb/thumbs/thumbCollectionPage6.jpg","assets/personalWeb/thumbs/thumbCollectionPageShot7.jpg",
-                 "assets/personalWeb/thumbs/thumbAboutPage8.jpg","assets/personalWeb/thumbs/thumbContactPage9.jpg"];
+    $scope.personalWebArray=["assets/images/personalWeb/mainPics/homePage1.jpg","assets/images/personalWeb/mainPics/photoPage2.jpg","assets/images/personalWeb/mainPics/photoPageShot3.jpg","assets/images/personalWeb/mainPics/musicPage4.jpg",
+                             "assets/images/personalWeb/mainPics/musicPageShot5.jpg","assets/images/personalWeb/mainPics/collectionPage6.jpg","assets/images/personalWeb/mainPics/collectionPageShot7.jpg",
+                             "assets/images/personalWeb/mainPics/aboutPage8.jpg","assets/images/personalWeb/mainPics/contactPage9.jpg"];
+    $scope.webImageThumbsArray =["assets/images/personalWeb/thumbs/thumbHomePage1.jpg","assets/images/personalWeb/thumbs/thumbPhotoPage2.jpg","assets/images/personalWeb/thumbs/thumbPhotoPageShot3.jpg","assets/images/personalWeb/thumbs/thumbMusicPage4.jpg",
+                 "assets/images/personalWeb/thumbs/thumbMusicPageShot5.jpg","assets/images/personalWeb/thumbs/thumbCollectionPage6.jpg","assets/images/personalWeb/thumbs/thumbCollectionPageShot7.jpg",
+                 "assets/images/personalWeb/thumbs/thumbAboutPage8.jpg","assets/images/personalWeb/thumbs/thumbContactPage9.jpg"];
 
-    $scope.martialArtWebArray=["assets/martialArtWeb/mainPics/Home1.jpg","assets/martialArtWeb/mainPics/Gallery2.jpg","assets/martialArtWeb/mainPics/Kids3.jpg",
-                              "assets/martialArtWeb/mainPics/Women4.jpg","assets/martialArtWeb/mainPics/Schedule5.jpg","assets/martialArtWeb/mainPics/Contactus6.jpg"];
-    $scope.martialArtWebThumbArray=["assets/martialArtWeb/thumbs/thumbHome1.jpg","assets/martialArtWeb/thumbs/thumbGallery2.jpg","assets/martialArtWeb/thumbs/thumbKids3.jpg",
-                                    "assets/martialArtWeb/thumbs/thumbWomen4.jpg","assets/martialArtWeb/thumbs/thumbSchedule5.jpg","assets/martialArtWeb/thumbs/thumbContactus6.jpg"];
+    $scope.martialArtWebArray=["assets/images/martialArtWeb/mainPics/Home1.jpg","assets/images/martialArtWeb/mainPics/Gallery2.jpg","assets/images/martialArtWeb/mainPics/Kids3.jpg",
+                              "assets/images/martialArtWeb/mainPics/Women4.jpg","assets/images/martialArtWeb/mainPics/Schedule5.jpg","assets/images/martialArtWeb/mainPics/Contactus6.jpg"];
+    $scope.martialArtWebThumbArray=["assets/images/martialArtWeb/thumbs/thumbHome1.jpg","assets/images/martialArtWeb/thumbs/thumbGallery2.jpg","assets/images/martialArtWeb/thumbs/thumbKids3.jpg",
+                                    "assets/images/martialArtWeb/thumbs/thumbWomen4.jpg","assets/images/martialArtWeb/thumbs/thumbSchedule5.jpg","assets/images/martialArtWeb/thumbs/thumbContactus6.jpg"];
 
     //$scope.urlImageArrayLength = $scope.slides.length;
     $scope.popupWebArray=[];//array that content all the image of the websites that display on Popup
@@ -47,7 +47,7 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
     $scope.showPlayCaroselButton=true;//show the playCarouseSlideShow at the beginning
     $scope.isEnter=false;
     $scope.counter =0;//index of image
-    $scope.contactImage="assets/icons/sendMail.jpeg";
+    $scope.contactImage="assets/images/icons/sendMail.jpeg";
     $scope.caroselButtonLabel="play";
    //-----===========TESTING========================
         $scope.direction = 'left';
@@ -109,14 +109,14 @@ angular.module('website', ['ngAnimate','ngTouch','ngRoute','ui.bootstrap'])
    $scope.thumbImageWebSite=[];
    $scope.selectedImage = function(imageUrl){
     console.log("image",imageUrl);
-    if (imageUrl ==='assets/imageWebReferences/personalWebThumb.jpg')
+    if (imageUrl ==='assets/images/imageWebReferences/personalWebThumb.jpg')
     {
         $scope.popupWebArray=$scope.personalWebArray; //copy the personal website to the popupWebArray
       $scope.thumbImageWebSite=$scope.webImageThumbsArray;
         $scope.isDisplayPopupImage=true;
       console.log("it is here");
     }
-    else if(imageUrl==='assets/imageWebReferences/martialArtWebThumb.jpg')
+    else if(imageUrl==='assets/images/imageWebReferences/martialArtWebThumb.jpg')
     {
       $scope.popupWebArray=$scope.martialArtWebArray;
        $scope.thumbImageWebSite=$scope.martialArtWebThumbArray;

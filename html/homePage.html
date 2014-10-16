@@ -127,7 +127,7 @@
 <!---####################This for Web Image Popup #################-->
 <div modal="isDisplayPopupImage">
     <div id="imagePopupContainer">
-        <img id="imgWebPopup"ng-src="{{popupWebArray[popupImageCounter]}}">
+        <img style="width:100%;height:100%;"ng-src="{{popupWebArray[popupImageCounter]}}">
     </div>
     <div ng-if="!isOnCarouselMode">
         <ul  id="imageThumbPopupContainer"  ng-mouseenter="isEnter=true; " ng-mouseleave="isEnter=false" >
@@ -138,10 +138,10 @@
     </div>
     <div id="button">
         <div id="Next-Button-Style">
-            <button class ="Next-Pre-Button"ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
+            <button class ="Next-Pre-Button carlPreButton"ng-click="nextPopupImg()" ng-disabled="isOnCarouselMode">Next</button>
         </div>
         <div id="Pre-Button-Style">
-            <button class="Next-Pre-Button" ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
+            <button class="Next-Pre-Button carlNextButton" ng-click="prePopupImg()" ng-disabled="isOnCarouselMode">Pre</button>
         </div>
         <a href=""><div id="popup-stop-button-div" ng-if="!isOnCarouselMode">
             <div id="popup-active-button" ng-click="exitPopupImageContainer()">Exit</div>
